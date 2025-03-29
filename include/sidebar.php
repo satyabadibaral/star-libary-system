@@ -70,10 +70,10 @@
               <div class="collapse" id="lonemgmt">
                 <ul class="navbar-nav ms-3">
                   <li class="nav-item">
-                    <a href="" class="nav-link active"><i class="fa-solid fa-plus me-2"></i>Add new</a>
+                    <a href="<?php echo base_url;?>.\loans\add_loan.php" class="nav-link active"><i class="fa-solid fa-plus me-2"></i>Add new</a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link active"><i class="fa-solid fa-list me-2"></i>manage Loan</a>
+                    <a href="<?php echo base_url;?>.\loans" class="nav-link active"><i class="fa-solid fa-list me-2"></i>manage Loan</a>
                   </li>
                   </ul>
               </div>
@@ -87,10 +87,10 @@
               <div class="collapse" id="Subscriptionmgmt">
                 <ul class="navbar-nav ms-3">
                   <li class="nav-item">
-                    <a href="" class="nav-link active"><i class="fa-solid fa-plus me-2"></i>Plans</a>
+                    <a href="<?php echo base_url;?>./subscription/index.php" class="nav-link active"><i class="fa-solid fa-plus me-2"></i>Plans</a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link active"><i class="fa-solid fa-list me-2"></i>Purchase History</a>
+                    <a href="<?php echo base_url;?>./subscription/purchase_history.php" class="nav-link active"><i class="fa-solid fa-list me-2"></i>Purchase History</a>
                   </li>
                   </ul>
               </div>

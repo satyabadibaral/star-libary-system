@@ -110,6 +110,12 @@ function getCategories($conn)
     $result=$conn->query($sql);
     return $result;
 }
+function getStudent($conn)
+{
+    $sql="select id,name from students";
+    $result=$conn->query($sql);
+    return $result;
+}
 
 // function for get isbn number is uniq or nut
 function isisbnuniq($conn,$isbn,$id=null){

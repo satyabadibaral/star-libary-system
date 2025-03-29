@@ -1,3 +1,40 @@
+<?php
+
+include_once("Config/config.php");
+include_once("Config/database.php");
+
+
+// $passwors="happy1996";
+// $hash=password_hash($passwors,PASSWORD_DEFAULT);
+// echo $hash;
+// exit;
+// // if(password_verify("happy1996",$hash)){
+// //   echo "You are logged in!";
+// // }
+// // else{
+// //   echo"invalid password";
+// // }
+include_once(dir_url."models/auth.php");
+if($_POST['submit']){
+  $res=login($conn,$_POST);
+
+  if($res['status']==true){
+    
+    $_SESSION['is_user_login']=true;
+    $_SESSION['user']=$res['user'];
+    header("LOCATION:".base_url."Dashbord.php");
+    exit;
+  }
+  else{
+    $_SESSION['error']="invalid information";
+    header("LOCATION:".base_url."index.php");
+    exit;
+
+  }
+  
+}
+
+?>
 <!DOCTYPE.php>
 <html lang="en">
   <head>
@@ -24,12 +61,17 @@
                       </div>
                       <div class="col-md-7">
                         <div class="card-body">
+                         
+                         <?php
+                         include_once(dir_url."include/alert.php");
+                         ?>
+                       
                           <h1 class="card-title">Star Library</h1>
                           <p class="card-text">Enter email and password for login</p>
-                          <form action="Dashbord.php" >
+                          <form action="<?php echo base_url;?>index.php" method="post">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Email address</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                              <label for="email" class="form-label">Email address</label>
+                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
                              
                             </div>
                             <div class="mb-3">
@@ -37,7 +79,8 @@
                               <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                             </div>
                            
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            
+                            <input type="submit" class="btn btn-primary" value="Login" name="submit">
                           </form>
                           <hr>
                           <a href="forgetpassword.php" class="card-link text-decoration-none" target="_blank">Forget password</a>

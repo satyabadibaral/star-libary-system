@@ -2,6 +2,7 @@
 
 
 include_once("../Config/config.php");
+include_once(dir_url."include/middleware.php");
 include_once("../Config/database.php");
 include_once(dir_url."models/students.php");
 

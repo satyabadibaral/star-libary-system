@@ -32,7 +32,7 @@
                 <li><a class="dropdown-item" href="#">My profile</a></li>
                 <li><a class="dropdown-item" href="#">change password</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">logout</a></li>
+                <li><a class="dropdown-item" href="<?php echo base_url;?>logout.php">logout</a></li>
               </ul>
             </li>
             
